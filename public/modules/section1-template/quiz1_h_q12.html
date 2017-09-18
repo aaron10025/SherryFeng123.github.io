@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <h2>Quiz 1</h2>
+
+
+  </head>
+
+<body>
+
+  <div id="section2-template">
+  	<div id="question"></div>
+  	<div id="chart"></div>
+  	<div id="warning"></div>
+  </div>
+
+	<script src="https://d3js.org/d3.v3.min.js"></script>
+
+<img src="modules/section1-template/hard.png" alt="easy" height = "400" width = "450" border="0"></a>
+
+  <body>
+
+<!--
+      <div id = "q11">
+          Q11. What is/are the node(s) that is (adjacent) to both node c and h?
+         <br>
+         <br>
+         <input type='checkbox' name='q11' value='start' />
+           <span style="width:50px;display:inline-block;">Start</span>
+           <input type='checkbox' name='q11' value='end'/>
+             <span style="width:50px;display:inline-block;">End</span>
+        <input type='checkbox' name='q11' value='a' />
+          <span style="width:30px;display:inline-block;">a</span>
+          <input type='checkbox' name='q11' value='b' />
+            <span style="width:30px;display:inline-block;">b</span>
+          <input type='checkbox' name='q11' value='c' />
+          <span style="width:30px;display:inline-block;">c</span>
+          <input type='checkbox' name='q11' value='d' />
+          <span style="width:30px;display:inline-block;">d</span>
+            <input type='checkbox' name='q11' value='f' />
+            <span style="width:30px;display:inline-block;">f</span>
+              <input type='checkbox' name='q11' value='h' />
+              <span style="width:30px;display:inline-block;">h</span>
+              <input type='checkbox' name='q11' value='i' />
+              <span style="width:30px;display:inline-block;">i</span>
+              <input type='checkbox' name='q11' value='j' />
+              <span style="width:30px;display:inline-block;">j</span>
+              <input type='checkbox' name='q11' value='m' />
+              <span style="width:30px;display:inline-block;">m</span>
+              <input type='checkbox' name='q11' value='n' />
+              <span style="width:30px;display:inline-block;">n</span>
+      </div>
+ -->
+
+  <form>
+    Q12. How many nodes are in this graph?
+  <br>
+    <br>
+  <input type="text" name="q12"><br>
+  </form>
+
+
+<!--
+  <form>
+    Q13. What is the (outdegree) for node b?
+  <br>
+  <input type="text" name="q13"><br>
+  </form> -->
+
+
+	</body>
+
+  <script>
+
+//  console.log("starting")
+
+  (function() {
+    var data = {};
+
+    experimentr.startTimer('quiz1_h_q12_time');
+
+    // d3.selectAll('input')
+    // .filter(function(d) { return this.name === 'q11' ? this : null; })
+    // .on('change', function() { data.q11 = this.value; validate(); });
+
+    d3.selectAll('input')
+    .filter(function(d) { return this.name === 'q12' ? this : null; })
+    .on('change', function() { data.q12 = this.value; validate(); });
+
+    // d3.selectAll('input')
+    // .filter(function(d) { return this.name === 'q13' ? this : null; })
+    // .on('change', function() { data.q13 = this.value; validate(); });
+
+    function validate() {
+
+      if(data.q12)
+       {
+  	    experimentr.endTimer('demo');
+  	    experimentr.addData(data);
+  	    experimentr.release();
+  	  }else{
+        console.log("not valid")
+        console.log("response", data)
+      }
+  	}
+  }());
+
+  </script>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <h2>Quiz 1</h2>
+
+
+  </head>
+
+<body>
+
+  <div id="section2-template">
+  	<div id="question"></div>
+  	<div id="chart"></div>
+  	<div id="warning"></div>
+  </div>
+
+
+	<script src="https://d3js.org/d3.v3.min.js"></script>
+
+
+
+<img src="modules/section1-template/easy.png" alt="easy" height = "500" width = "500" border="0"></a>
+
+
+  <body>
+    <!-- <p>
+      <br>
+
+      <div id = "q1">
+         Q1. Select nodes that are (adjacent) to start:
+         <br>
+         <br>
+         <input type='checkbox' name='q1' value='start' />
+           <span style="width:50px;display:inline-block;">Start</span>
+           <input type='checkbox' name='q1' value='end'/>
+             <span style="width:50px;display:inline-block;">End</span>
+        <input type='checkbox' name='q1' value='a' />
+          <span style="width:30px;display:inline-block;">a</span>
+          <input type='checkbox' name='q1' value='b' />
+            <span style="width:30px;display:inline-block;">b</span>
+          <input type='checkbox' name='q1' value='c' />
+          <span style="width:30px;display:inline-block;">c</span>
+            <input type='checkbox' name='q1' value='f' />
+            <span style="width:30px;display:inline-block;">f</span>
+              <input type='checkbox' name='q1' value='g' />
+              <span style="width:30px;display:inline-block;">g</span>
+
+      </div> -->
+
+
+      <!-- Q1. Select nodes that are (adjacent) to start (separate by commas such as A,B,C):
+      <br>
+    <label for="q1">
+    <input type="text" id="question1" /
+  <input type="checkbox" name="q1">A<br>
+    <input type="checkbox" name="q1">B<br>
+    <span style="width:100px;display:inline-block;">Soccer</span>
+      <input type="checkbox" name="q1">C<br>
+        <input type="checkbox" name="q1">D<br> -->
+
+<!-- <form>
+  Q2. What is the (outdegree) of node a?
+<br>
+<input type="text" name="q2"><br>
+</form>
+
+<br>
+<br> -->
+
+
+<form>
+  Q3. How many nodes are in this graph?
+<br>
+<br>
+<input type="text" name="q3"><br>
+</form>
+
+<!--
+<form>
+  Q4.  List the nodes directly connected to end (easy, topology)
+
+<br>
+<input type="text" name="q4"><br>
+</form>
+
+<br>
+<br>
+
+
+<form>
+  Q5. How many nodes are directly connected to node f?
+
+<br>
+<input type="text" name="q5"><br>
+</form>
+
+<br>
+<br>
+
+<form>
+  Q6. Which node has the maximum amount of nodes adjacent? If it is a tie, enter both (topology, medium)
+
+<br>
+<input type="text" name="q6"><br>
+</form>
+
+<br>
+<br>
+
+
+<form>
+  Q7. What is the longest path from start to end? (medium, browsing task)
+
+<br>
+<input type="text" name="q7"><br>
+</form>
+
+
+<br>
+<br>
+
+<form>
+  Q8. How many different paths can you get from start to end? (browsing task, difficult)
+
+<br>
+<input type="text" name="q8"><br>
+</form>
+
+<br>
+<br>
+
+<form>
+  Q9. (Connecting after Q8, list out the nodes of the # of path selected, for example if user said there is 3 paths, then do:
+<br>
+Path 1
+<input type="text" name="q9.1"><br>
+Path 2
+<input type="text" name="q9.2"><br>
+Path 3
+<input type="text" name="q9.3"><br>
+Path 4
+<input type="text" name="q9.4"><br>
+Path 5
+<input type="text" name="q9.5"><br>
+Path 6
+<input type="text" name="q9.6"><br>
+Path 7
+<input type="text" name="q9.7"><br>
+
+</form>
+
+<br>
+
+<br>
+
+<form>
+  Q10. How many different paths can you get from f to b?
+<br>
+<input type="text" name="q10"><br>
+</form> -->
+
+
+
+  </p>
+</br>
+	</body>
+
+  <script>
+
+//  console.log("starting")
+
+  (function() {
+    var data = {};
+
+    experimentr.startTimer('quiz1_e_q3_time');
+
+    d3.selectAll('input')
+    .filter(function(d) { return this.name === 'q3' ? this : null; })
+    .on('change', function() { data.q3 = this.value; validate(); });
+
+    // d3.selectAll('input')
+    // .filter(function(d) { return this.name === 'q4' ? this : null; })
+    // .on('change', function() { data.q4 = this.value; validate(); });
+    //
+    // d3.selectAll('input')
+    // .filter(function(d) { return this.name === 'q5' ? this : null; })
+    // .on('change', function() { data.q5 = this.value; validate(); });
+    //
+    // d3.selectAll('input')
+    // .filter(function(d) { return this.name === 'q6' ? this : null; })
+    // .on('change', function() { data.q6 = this.value; validate(); });
+    //
+    // d3.selectAll('input')
+    // .filter(function(d) { return this.name === 'q7' ? this : null; })
+    // .on('change', function() { data.q7 = this.value; validate(); });
+    //
+    // d3.selectAll('input')
+    // .filter(function(d) { return this.name === 'q8' ? this : null; })
+    // .on('change', function() { data.q8 = this.value; validate(); });
+    //
+    // d3.selectAll('input')
+    // .filter(function(d) { return this.name === 'q9.1' ? this : null; })
+    // .on('change', function() { data.q91 = this.value; validate(); });
+    //
+    // d3.selectAll('input')
+    // .filter(function(d) { return this.name === 'q9.2' ? this : null; })
+    // .on('change', function() { data.q92 = this.value; validate(); });
+    //
+    // d3.selectAll('input')
+    // .filter(function(d) { return this.name === 'q9.3' ? this : null; })
+    // .on('change', function() { data.q93 = this.value; validate(); });
+    //
+    // d3.selectAll('input')
+    // .filter(function(d) { return this.name === 'q9.4' ? this : null; })
+    // .on('change', function() { data.q94 = this.value; validate(); });
+    //
+    // d3.selectAll('input')
+    // .filter(function(d) { return this.name === 'q9.5' ? this : null; })
+    // .on('change', function() { data.q95 = this.value; validate(); });
+    //
+    // d3.selectAll('input')
+    // .filter(function(d) { return this.name === 'q9.6' ? this : null; })
+    // .on('change', function() { data.q96 = this.value; validate(); });
+    //
+    // d3.selectAll('input')
+    // .filter(function(d) { return this.name === 'q9.7' ? this : null; })
+    // .on('change', function() { data.q97 = this.value; validate(); });
+    //
+    // d3.selectAll('input')
+    // .filter(function(d) { return this.name === 'q10' ? this : null; })
+    // .on('change', function() { data.q10 = this.value; validate(); });
+
+    function validate() {
+  	  // if(data.q1 && data.q2 && data.q3 && data.q4 && data.q5 && data.q6 && data.q7 && data.q8
+      // && data.q91 && data.q92 && data.q93 && data.q94 && data.q95 && data.q96 &&
+      // data.q97 && data.q10)
+      if(data.q3)
+       {
+  	    experimentr.endTimer('demo');
+  	    experimentr.addData(data);
+  	    experimentr.release();
+  	  }else{
+        console.log("not valid")
+        console.log("response", data)
+      }
+  	}
+  }());
+
+  </script>

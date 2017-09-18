@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <h2>Quiz 1</h2>
+
+
+  </head>
+
+<body>
+
+  <div id="section2-template">
+  	<div id="question"></div>
+  	<div id="chart"></div>
+  	<div id="warning"></div>
+  </div>
+
+
+	<script src="https://d3js.org/d3.v3.min.js"></script>
+
+
+<img src="modules/section1-template/easy.png" alt="easy" height = "500" width = "500" border="0"></a>
+
+
+  <body>
+    <p>
+
+      <form>
+        Q4. What is the <div class="tooltip">indegree
+          <span class="tooltiptext">Total number of incoming edges connected to a vertex is said to be indegree of that vertex</span>
+        </div> of node f?
+
+      <br>
+      <br>
+      <input type="text" name="q4"><br>
+      </form>
+
+      <!-- <div id = "q4">
+         Q4. Select node(s) that is/are <div class="tooltip">indegree
+           <span class="tooltiptext">If there is an edge between vertices A and B then both A and B are said to be adjacent</span>
+         </div> to start:
+         <br>
+         <br>
+         <input type='checkbox' name='q4' value='start' />
+           <span style="width:50px;display:inline-block;">Start</span>
+           <input type='checkbox' name='q4' value='end'/>
+             <span style="width:50px;display:inline-block;">End</span>
+        <input type='checkbox' name='q4' value='a' />
+          <span style="width:30px;display:inline-block;">a</span>
+          <input type='checkbox' name='q4' value='b' />
+            <span style="width:30px;display:inline-block;">b</span>
+          <input type='checkbox' name='q4' value='c' />
+          <span style="width:30px;display:inline-block;">c</span>
+            <input type='checkbox' name='q4' value='f' />
+            <span style="width:30px;display:inline-block;">f</span>
+              <input type='checkbox' name='q4' value='g' />
+              <span style="width:30px;display:inline-block;">g</span>
+      </div> -->
+
+<!--
+<form>
+  Q5. What is the (degree) of node f?
+
+<br>
+<input type="text" name="q5"><br>
+</form> -->
+
+<script>
+
+(function() {
+  var data = {};
+
+  experimentr.startTimer('quiz1_m_q1_time');
+
+  d3.selectAll('input')
+  .filter(function(d) { return this.name === 'q4' ? this : null; })
+  .on('change', function() { data.q4 = this.value; validate(); });
+  //
+  // d3.selectAll('input')
+  // .filter(function(d) { return this.name === 'q5' ? this : null; })
+  // .on('change', function() { data.q5 = this.value; validate(); });
+
+
+  function validate() {
+    if(data.q4)// && data.q5)
+     {
+      experimentr.endTimer('demo');
+      experimentr.addData(data);
+      experimentr.release();
+    }else{
+      console.log("not valid")
+      console.log("response", data)
+    }
+  }
+}());
+
+
+
+</script>

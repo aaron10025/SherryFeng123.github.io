@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <h2>Quiz 1</h2>
+
+  </head>
+
+<body>
+
+  <div id="section2-template">
+  	<div id="question"></div>
+  	<div id="chart"></div>
+  	<div id="warning"></div>
+  </div>
+
+
+	<script src="https://d3js.org/d3.v3.min.js"></script>
+
+
+
+<img src="modules/section1-template/medium.png" alt="medium" height = "500" width = "400" border="0"></a>
+
+
+  <body>
+    <p>
+
+      <form>
+        Q7. What is the <div class="tooltip">outdegree
+          <span class="tooltiptext">Total number of outgoing edges connected to a vertex is said to be outdegree of that vertex</span>
+        </div> of node c?
+      <br>
+      <br>
+      <input type="text" name="q7"><br>
+      </form>
+
+    <!-- <form>
+  Q6. What is the (outdegree) of end?
+  <br>
+  <input type="text" name="q6"><br>
+</form>
+
+<br>
+<br> -->
+
+
+
+
+<!-- <div id = "q7">
+  Q7. Select the node(s) that is/are the <div class="tooltip">destination
+    <span class="tooltiptext">If an edge is directed, its first endpoint is said to be origin of it and the other endpoint is said to be the destination of the edge</span>
+  </div> of node c
+   <br>
+   <br>
+   <input type='checkbox' name='q7' value='start' />
+     <span style="width:50px;display:inline-block;">Start</span>
+     <input type='checkbox' name='q7' value='end'/>
+       <span style="width:50px;display:inline-block;">End</span>
+  <input type='checkbox' name='q7' value='a' />
+    <span style="width:30px;display:inline-block;">a</span>
+    <input type='checkbox' name='q7' value='b' />
+      <span style="width:30px;display:inline-block;">b</span>
+    <input type='checkbox' name='q7' value='c' />
+    <span style="width:30px;display:inline-block;">c</span>
+    <input type='checkbox' name='q7' value='d' />
+    <span style="width:30px;display:inline-block;">d</span>
+      <input type='checkbox' name='q7' value='f' />
+      <span style="width:30px;display:inline-block;">f</span>
+        <input type='checkbox' name='q7' value='h' />
+        <span style="width:30px;display:inline-block;">h</span>
+        <input type='checkbox' name='q7' value='i' />
+        <span style="width:30px;display:inline-block;">i</span>
+</div> -->
+
+
+<!-- <form>
+  Q8. How many nodes are in this graph?
+<br>
+<input type="text" name="q8"><br>
+</form>
+	</body> -->
+
+  <script>
+
+//  console.log("starting")
+
+  (function() {
+    var data = {};
+
+    experimentr.startTimer('quiz1_m_q7_time');
+
+    // d3.selectAll('input')
+    // .filter(function(d) { return this.name === 'q6' ? this : null; })
+    // .on('change', function() { data.q6 = this.value; validate(); });
+
+    d3.selectAll('input')
+    .filter(function(d) { return this.name === 'q7' ? this : null; })
+    .on('change', function() { data.q7 = this.value; validate(); });
+
+    // d3.selectAll('input')
+    // .filter(function(d) { return this.name === 'q8' ? this : null; })
+    // .on('change', function() { data.q8 = this.value; validate(); });
+
+    function validate() {
+
+      if(data.q7)
+       {
+  	    experimentr.endTimer('demo');
+  	    experimentr.addData(data);
+  	    experimentr.release();
+  	  }else{
+        console.log("not valid")
+        console.log("response", data)
+      }
+  	}
+  }());
+
+  </script>

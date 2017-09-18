@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+
+
+
+  </head>
+
+
+<body>
+
+  <div id="section2-template">
+  	<div id="question"></div>
+  	<div id="chart"></div>
+  	<div id="warning"></div>
+  </div>
+
+
+	<script src="https://d3js.org/d3.v3.min.js"></script>
+
+    <h2>Quiz 1</h2>
+
+<img src="modules/section1-template/easy.png" alt="easy" height = "500" width = "500" border="0"></a>
+
+  <body>
+
+      <div id = "q1">
+
+
+         Q1. Select the node(s) that is/are <div class="tooltip">adjacent
+           <span class="tooltiptext">If there is an edge between vertices A and B then both A and B are said to be adjacent</span>
+         </div> to start:
+         <br>
+         <br>
+
+     <input type='checkbox' name='q1' value='start' />
+           <span style="width:50px;display:inline-block;">Start</span>
+           <input type='checkbox' name='q1' value='end'/>
+             <span style="width:50px;display:inline-block;">End</span>
+        <input type='checkbox' name='q1' value='a' />
+          <span style="width:30px;display:inline-block;">a</span>
+          <input type='checkbox' name='q1' value='b' />
+            <span style="width:30px;display:inline-block;">b</span>
+          <input type='checkbox' name='q1' value='c' />
+          <span style="width:30px;display:inline-block;">c</span>
+            <input type='checkbox' name='q1' value='f' />
+            <span style="width:30px;display:inline-block;">f</span>
+              <input type='checkbox' name='q1' value='g' />
+              <span style="width:30px;display:inline-block;">g</span>
+      </div>
+
+  </p>
+    <br>
+	</body>
+
+  <script>
+
+  (function() {
+    var data = {};
+
+    experimentr.startTimer('quiz1_e_q1_time');
+
+    d3.selectAll('input')
+    .filter(function(d) { return this.name === 'q1' ? this : null; })
+    .on('change', function() { data.q1 = this.value; validate(); });
+    //
+    // d3.selectAll('input')
+    // .filter(function(d) { return this.name === 'q2' ? this : null; })
+    // .on('change', function() { data.q2 = this.value; validate(); });
+    //
+    // d3.selectAll('input')
+    // .filter(function(d) { return this.name === 'q3' ? this : null; })
+    // .on('change', function() { data.q3 = this.value; validate(); });
+
+    // d3.selectAll('input')
+    // .filter(function(d) { return this.name === 'q4' ? this : null; })
+    // .on('change', function() { data.q4 = this.value; validate(); });
+    //
+    // d3.selectAll('input')
+    // .filter(function(d) { return this.name === 'q5' ? this : null; })
+    // .on('change', function() { data.q5 = this.value; validate(); });
+    //
+    // d3.selectAll('input')
+    // .filter(function(d) { return this.name === 'q6' ? this : null; })
+    // .on('change', function() { data.q6 = this.value; validate(); });
+    //
+    // d3.selectAll('input')
+    // .filter(function(d) { return this.name === 'q7' ? this : null; })
+    // .on('change', function() { data.q7 = this.value; validate(); });
+    //
+    // d3.selectAll('input')
+    // .filter(function(d) { return this.name === 'q8' ? this : null; })
+    // .on('change', function() { data.q8 = this.value; validate(); });
+    //
+    // d3.selectAll('input')
+    // .filter(function(d) { return this.name === 'q9.1' ? this : null; })
+    // .on('change', function() { data.q91 = this.value; validate(); });
+    //
+    // d3.selectAll('input')
+    // .filter(function(d) { return this.name === 'q9.2' ? this : null; })
+    // .on('change', function() { data.q92 = this.value; validate(); });
+    //
+    // d3.selectAll('input')
+    // .filter(function(d) { return this.name === 'q9.3' ? this : null; })
+    // .on('change', function() { data.q93 = this.value; validate(); });
+    //
+    // d3.selectAll('input')
+    // .filter(function(d) { return this.name === 'q9.4' ? this : null; })
+    // .on('change', function() { data.q94 = this.value; validate(); });
+    //
+    // d3.selectAll('input')
+    // .filter(function(d) { return this.name === 'q9.5' ? this : null; })
+    // .on('change', function() { data.q95 = this.value; validate(); });
+    //
+    // d3.selectAll('input')
+    // .filter(function(d) { return this.name === 'q9.6' ? this : null; })
+    // .on('change', function() { data.q96 = this.value; validate(); });
+    //
+    // d3.selectAll('input')
+    // .filter(function(d) { return this.name === 'q9.7' ? this : null; })
+    // .on('change', function() { data.q97 = this.value; validate(); });
+    //
+    // d3.selectAll('input')
+    // .filter(function(d) { return this.name === 'q10' ? this : null; })
+    // .on('change', function() { data.q10 = this.value; validate(); });
+
+    function validate() {
+  	  // if(data.q1 && data.q2 && data.q3 && data.q4 && data.q5 && data.q6 && data.q7 && data.q8
+      // && data.q91 && data.q92 && data.q93 && data.q94 && data.q95 && data.q96 &&
+      // data.q97 && data.q10)
+      if(data.q1)// && data.q2 && data.q3)
+       {
+  	    experimentr.endTimer('demo');
+  	    experimentr.addData(data);
+  	    experimentr.release();
+  	  }else{
+        console.log("not valid")
+        console.log("response", data)
+      }
+  	}
+  }());
+
+  </script>
+
+  </html>
