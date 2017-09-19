@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <h2>Quiz 2</h2>
+
+  </head>
+
+<body>
+
+  <div id="section2-template">
+  	<div id="question"></div>
+  	<div id="chart"></div>
+  	<div id="warning"></div>
+  </div>
+
+
+	<script src="https://d3js.org/d3.v3.min.js"></script>
+
+
+<img src="modules/section2-quiz2/hard2.png" alt="hard" height = "400" width = "450" border="0"></a>
+
+
+<form>
+  Q15. What is the <div class="tooltip">degree
+    <span class="tooltiptext">Total number of edges connected to a vertex is said to be degree of that vertex</span>
+  </div> of node c?
+<br>
+<br>
+<input type="text" name="q15"><br>
+</form>
+
+  <!-- <div id = "q15">
+    Q15. What is/are the node(s) m is <div class="tooltip">adjacent
+      <span class="tooltiptext">If there is an edge between vertices A and B then both A and B are said to be adjacent</span>
+    </div> to?
+
+     <br>
+     <br>
+     <input type='checkbox' name='q15' value='start' />
+       <span style="width:50px;display:inline-block;">Start</span>
+       <input type='checkbox' name='q15' value='end'/>
+         <span style="width:50px;display:inline-block;">End</span>
+    <input type='checkbox' name='q15' value='a' />
+      <span style="width:30px;display:inline-block;">a</span>
+      <input type='checkbox' name='q15' value='b' />
+        <span style="width:30px;display:inline-block;">b</span>
+      <input type='checkbox' name='q15' value='c' />
+      <span style="width:30px;display:inline-block;">c</span>
+      <input type='checkbox' name='q15' value='d' />
+      <span style="width:30px;display:inline-block;">d</span>
+        <input type='checkbox' name='q15' value='f' />
+        <span style="width:30px;display:inline-block;">f</span>
+          <input type='checkbox' name='q15' value='h' />
+          <span style="width:30px;display:inline-block;">h</span>
+          <input type='checkbox' name='q15' value='i' />
+          <span style="width:30px;display:inline-block;">i</span>
+  </div> -->
+
+
+	</body>
+
+  <script>
+
+//  console.log("starting")
+
+  (function() {
+    var data = {};
+
+    experimentr.startTimer('quiz1_time');
+
+
+    d3.selectAll('input')
+    .filter(function(d) { return this.name === 'q15' ? this : null; })
+    .on('change', function() { data.q15 = this.value; validate(); });
+
+    function validate() {
+
+      if(data.q15)
+       {
+  	    experimentr.endTimer('demo');
+  	    experimentr.addData(data);
+  	    experimentr.release();
+  	  }else{
+        console.log("not valid")
+        console.log("response", data)
+      }
+  	}
+  }());
+
+  </script>

@@ -1,4 +1,3 @@
-
 <div id="demographics">
 <p id="demoinstr">
 Thank you! The experiment is almost complete. Please fill out the following demographics form.
@@ -49,7 +48,7 @@ Thank you! The experiment is almost complete. Please fill out the following demo
 <br>
 </div>
 
-<script> 
+<script>
 (function() {
   var data = {};
 
@@ -58,19 +57,19 @@ Thank you! The experiment is almost complete. Please fill out the following demo
   d3.selectAll('input')
   .filter(function(d) { return this.name === 'age' ? this : null; })
   .on('change', function() { data.age = this.value; validate(); });
-  
+
   d3.selectAll('input')
   .filter(function(d) { return this.name === 'sex' ? this : null; })
   .on('change', function() { data.sex = this.value; validate(); });
-  
+
   d3.selectAll('input')
   .filter(function(d) { return this.name === 'degree' ? this : null; })
   .on('change', function() { data.degree = this.value; validate(); });
-  
+
   d3.selectAll('input')
   .filter(function(d) { return this.name === 'monitor' ? this : null; })
   .on('change', function() { data.monitor = this.value; validate(); });
-  
+
   function validate() {
 	  if(data.age && data.sex && data.degree && data.monitor) {
 	    experimentr.endTimer('demo');

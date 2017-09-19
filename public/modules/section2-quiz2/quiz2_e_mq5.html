@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <h2>Quiz 2</h2>
+
+  </head>
+
+<body>
+
+  <div id="section2-template">
+  	<div id="question"></div>
+  	<div id="chart"></div>
+  	<div id="warning"></div>
+  </div>
+
+
+	<script src="https://d3js.org/d3.v3.min.js"></script>
+
+  <img src="modules/section2-quiz2/easy2.png" alt="easy" height = "400" width = "280" border="0"></a>
+
+  <body>
+
+<form>
+  Q5. How many nodes are accessible to start?
+<br>
+<br>
+<input type="text" name="q5"><br>
+</form>
+
+<script>
+
+(function() {
+  var data = {};
+
+  experimentr.startTimer('quiz1_e_q5_time');
+
+  d3.selectAll('input')
+  .filter(function(d) { return this.name === 'q5' ? this : null; })
+  .on('change', function() { data.q5 = this.value; validate(); });
+
+
+  function validate() {
+    if(data.q5)
+     {
+      experimentr.endTimer('demo');
+      experimentr.addData(data);
+      experimentr.release();
+    }else{
+      console.log("not valid")
+      console.log("response", data)
+    }
+  }
+}());
+
+
+
+</script>

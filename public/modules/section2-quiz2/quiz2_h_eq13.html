@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <h2>Quiz 2</h2>
+
+
+  </head>
+
+<body>
+
+  <div id="section2-template">
+  	<div id="question"></div>
+  	<div id="chart"></div>
+  	<div id="warning"></div>
+  </div>
+
+	<script src="https://d3js.org/d3.v3.min.js"></script>
+
+<img src="modules/section2-quiz2/hard2.png" alt="easy" height = "400" width = "450" border="0"></a>
+
+  <body>
+
+
+  <form>
+    Q13. What is the <div class="tooltip">outdegree
+      <span class="tooltiptext">Total number of outgoing edges connected to a vertex is said to be outdegree of that vertex</span>
+    </div>  for node k?
+  <br>
+  <br>
+  <input type="text" name="q13"><br>
+  </form>
+
+
+	</body>
+
+  <script>
+
+//  console.log("starting")
+
+  (function() {
+    var data = {};
+
+    experimentr.startTimer('quiz1_h_q13_time');
+
+
+    d3.selectAll('input')
+    .filter(function(d) { return this.name === 'q13' ? this : null; })
+    .on('change', function() { data.q13 = this.value; validate(); });
+
+    function validate() {
+
+      if(data.q13)
+       {
+  	    experimentr.endTimer('demo');
+  	    experimentr.addData(data);
+  	    experimentr.release();
+  	  }else{
+        console.log("not valid")
+        console.log("response", data)
+      }
+  	}
+  }());
+
+  </script>

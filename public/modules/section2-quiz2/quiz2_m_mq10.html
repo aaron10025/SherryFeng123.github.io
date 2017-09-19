@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <h2>Quiz 2</h2>
+
+  </head>
+
+<body>
+
+  <div id="section2-template">
+  	<div id="question"></div>
+  	<div id="chart"></div>
+  	<div id="warning"></div>
+  </div>
+
+	<script src="https://d3js.org/d3.v3.min.js"></script>
+
+  <img src="modules/section2-quiz2/medium2.png" alt="medium" height = "400" width = "450" border="0"></a>
+
+
+<!-- <div id = "q9">
+  Q9. What is/are the node(s) (adjacent) to a and g?
+   <br>
+   <br>
+   <input type='checkbox' name='q9' value='start' />
+     <span style="width:50px;display:inline-block;">Start</span>
+     <input type='checkbox' name='q9' value='end'/>
+       <span style="width:50px;display:inline-block;">End</span>
+  <input type='checkbox' name='q9' value='a' />
+    <span style="width:30px;display:inline-block;">a</span>
+    <input type='checkbox' name='q9' value='b' />
+      <span style="width:30px;display:inline-block;">b</span>
+    <input type='checkbox' name='q9' value='c' />
+    <span style="width:30px;display:inline-block;">c</span>
+    <input type='checkbox' name='q9' value='d' />
+    <span style="width:30px;display:inline-block;">d</span>
+      <input type='checkbox' name='q9' value='f' />
+      <span style="width:30px;display:inline-block;">f</span>
+        <input type='checkbox' name='q9' value='h' />
+        <span style="width:30px;display:inline-block;">h</span>
+        <input type='checkbox' name='q9' value='i' />
+        <span style="width:30px;display:inline-block;">i</span>
+</div>
+
+<br>
+<br> -->
+
+<form>
+  Q10. How many nodes are accessible to node 1?
+<br>
+<br>
+<input type="text" name="q10"><br>
+</form>
+
+	</body>
+
+  <script>
+
+  (function() {
+    var data = {};
+
+    experimentr.startTimer('quiz1_m_q10_time');
+    //
+    // d3.selectAll('input')
+    // .filter(function(d) { return this.name === 'q9' ? this : null; })
+    // .on('change', function() { data.q9 = this.value; validate(); });
+
+    d3.selectAll('input')
+    .filter(function(d) { return this.name === 'q10' ? this : null; })
+    .on('change', function() { data.q10 = this.value; validate(); });
+
+    function validate() {
+
+      if(data.q10)//&& data.q10)
+       {
+  	    experimentr.endTimer('demo');
+  	    experimentr.addData(data);
+  	    experimentr.release();
+  	  }else{
+        console.log("not valid")
+        console.log("response", data)
+      }
+  	}
+  }());
+
+  </script>

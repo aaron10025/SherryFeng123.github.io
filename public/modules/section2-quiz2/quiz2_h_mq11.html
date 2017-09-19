@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <h2>Quiz 2</h2>
+
+  </head>
+
+<body>
+
+  <div id="section2-template">
+  	<div id="question"></div>
+  	<div id="chart"></div>
+  	<div id="warning"></div>
+  </div>
+
+	<script src="https://d3js.org/d3.v3.min.js"></script>
+
+<img src="modules/section2-quiz2/hard2.png" alt="easy" height = "400" width = "450" border="0"></a>
+
+  <body>
+    <p>
+
+      <div id = "q11">
+          Q11. How many nodes are accessible to i?
+         <br>
+         <br>
+
+  <input type="text" name="q11">
+
+
+  <br>
+  <br>
+<!--
+  <form>
+    Q12. How many nodes are in this graph?
+  <br>
+  <input type="text" name="q12"><br>
+  </form> -->
+
+  <br>
+  <br>
+
+<!--
+  <form>
+    Q13. What is the (outdegree) for node b?
+  <br>
+  <input type="text" name="q13"><br>
+  </form> -->
+
+
+	</body>
+
+  <script>
+
+//  console.log("starting")
+
+  (function() {
+    var data = {};
+
+    experimentr.startTimer('quiz1_h_q11_time');
+
+    d3.selectAll('input')
+    .filter(function(d) { return this.name === 'q11' ? this : null; })
+    .on('change', function() { data.q11 = this.value; validate(); });
+
+    // d3.selectAll('input')
+    // .filter(function(d) { return this.name === 'q12' ? this : null; })
+    // .on('change', function() { data.q12 = this.value; validate(); });
+    //
+    // d3.selectAll('input')
+    // .filter(function(d) { return this.name === 'q13' ? this : null; })
+    // .on('change', function() { data.q13 = this.value; validate(); });
+
+    function validate() {
+
+      if(data.q11)// && data.q12 && data.q13)
+       {
+  	    experimentr.endTimer('demo');
+  	    experimentr.addData(data);
+  	    experimentr.release();
+  	  }else{
+        console.log("not valid")
+        console.log("response", data)
+      }
+  	}
+  }());
+
+  </script>
